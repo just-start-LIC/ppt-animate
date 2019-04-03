@@ -1,5 +1,5 @@
 <template lang='pug'>
-div
+  div
     div.shutterAnimate(ref="shutterAnimate")
         div.leafList
             div(v-for="(i) in array" :key="i" :style="{height:leafHeight,width:leafWidth,float:'left'}")
@@ -33,88 +33,68 @@ export default {
         this.leafHeight = "100%";
       }
     }
-  },
+  }
 };
 </script>
 <style lang='stylus'>
-.shutterAnimate {
-  position: relative;
-  overflow: hidden;
-}
-.leafList
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(180deg);
+animation(argument)
+  -moz-animation:argument 1s
+  -webkit-animation:argument 1s
+  -o-animation:argument 1s
+  animation:argument 1s
+  background:white
+
+.shutterAnimate 
+  position: relative
+  overflow: hidden
   
-.horizontalLeafMoveIn {
-  width: 100%;
-  height: 0%;
-  -moz-animation: horizontalLeafMoveIn 1s; /* Firefox */
-  -webkit-animation: horizontalLeafMoveIn 1s; /* Safari and Chrome */
-  -o-animation: horizontalLeafMoveIn 1s; /* Opera */
-  animation: horizontalLeafMoveIn 1s; /* Opera */
-  background: white;
-}
-.horizontalLeafMoveOut {
-  width: 100%;
-  height: 100%;
-  -moz-animation: horizontalLeafMoveOut 1s; /* Firefox */
-  -webkit-animation: horizontalLeafMoveOut 1s; /* Safari and Chrome */
-  -o-animation: horizontalLeafMoveOut 1s; /* Opera */
-  animation: horizontalLeafMoveOut 1s; /* Opera */
-  background: white;
-}
-@keyframes horizontalLeafMoveIn {
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 0%;
-  }
-}
-@keyframes horizontalLeafMoveOut {
-  0% {
-    height: 0%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-.verticalLeafMoveIn {
-  width: 0%;
-  height: 100%;
-  -moz-animation: verticalLeafMoveIn 1s; /* Firefox */
-  -webkit-animation: verticalLeafMoveIn 1s; /* Safari and Chrome */
-  -o-animation: verticalLeafMoveIn 1s; /* Opera */
-  animation: verticalLeafMoveIn 1s; /* Opera */
-  background: white;
-}
-.verticalLeafMoveOut {
-  width: 100%;
-  height: 100%;
-  -moz-animation: verticalLeafMoveOut 1s; /* Firefox */
-  -webkit-animation: verticalLeafMoveOut 1s; /* Safari and Chrome */
-  -o-animation: verticalLeafMoveOut 1s; /* Opera */
-  animation: verticalLeafMoveOut 1s; /* Opera */
-  background: white;
-}
-@keyframes verticalLeafMoveIn {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-@keyframes verticalLeafMoveOut {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
+.leafList
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  transform: rotate(180deg)
+
+.horizontalLeafMoveIn 
+  width: 100%
+  height: 0%
+  animation('horizontalLeafMoveIn')
+
+.horizontalLeafMoveOut 
+  width: 100%
+  height: 100%
+  animation('horizontalLeafMoveOut')
+
+@keyframes horizontalLeafMoveIn 
+  0% 
+    height: 100%
+  100% 
+    height: 0%
+@keyframes horizontalLeafMoveOut 
+  0% 
+    height: 0%
+  100%
+    height: 100%
+
+.verticalLeafMoveIn 
+  width: 0%
+  height: 100%
+  animation('verticalLeafMoveIn');
+
+.verticalLeafMoveOut 
+  width: 100%
+  height: 100%
+  animation('verticalLeafMoveOut');
+
+@keyframes verticalLeafMoveIn 
+  0%
+    width: 100%
+  100%
+    width: 0%
+@keyframes verticalLeafMoveOut 
+  0% 
+    width: 0%
+  100%
+    width: 100%
 </style>
