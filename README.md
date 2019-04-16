@@ -10,5 +10,6 @@ npm run dev
 
 ##### 打包
 npm run build
-#####在线demo
+
+##### 在线demo
 [动画demo](https://jsut-start.github.io/pptAnimateDemo/index.html)
