@@ -1,13 +1,14 @@
 # pptanimate
 
-> animate of ppt
+这是一个根据ppt里的动画制作的一些动画
 
-# install dependencies
+##### 安装
 npm install
 
-# serve with hot reload at localhost:8080
+##### 运行
 npm run dev
 
-# build for production with minification
+##### 打包
 npm run build
-
+#####在线demo
+[动画demo](https://jsut-start.github.io/pptAnimateDemo/index.html)
